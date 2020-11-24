@@ -1,0 +1,154 @@
+@import './scss/variables';
+
+.app {
+  * {
+    font-family: Roboto;
+    font-style: normal;
+    color: $grey99;
+  }
+
+  .icon, i {
+    height: 1.3rem;
+    width: 1.3rem;
+    cursor: pointer;
+  }
+
+  .background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0 , 0, 0.3);
+    z-index: 9;
+  }
+
+  .start-container {
+    display: flex;
+    justify-content: center;
+    .modal {
+      padding: 78px 90px 58px 90px;
+    }
+    .modal-body {
+      flex-direction: column;
+      .circle-blue {
+        height: 100px;
+        width: 100px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+        background: $blue10;
+        border-radius: 50%;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 47px;
+        margin: 47px 0;
+        text-align: center;
+      }
+      div.list {
+        margin: 0;
+        padding: 0;
+        div.list-item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 12px;
+          list-style: none;
+          .circle-blue {
+            height: 32px;
+            width: 32px;
+            min-width: 32px;
+            margin-right: 21px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      button.start-btn {
+        width: 312px;
+        padding: 14px 0;
+        margin: 47px 0 27px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $breakpoint-width-phone) {
+  .app {
+    .start-container {
+      .modal {
+        padding: 126px 32px 60px 32px;
+      }
+    }
+  }
+}
+
+/* Button */
+
+button {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  &.green {
+    background: $green;
+  }
+}
+
+/* Modal */
+
+.modal {
+  box-sizing: border-box;
+  height: auto;
+  width: 690px;
+  position: fixed;
+  top: 109px;
+  left: calc(50% - 345px);
+  z-index: 99;
+  background: $bg;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  &.show {
+    display: block;
+  }
+  &.hide {
+    display: none;
+  }
+  .close-icon{
+    position: absolute;
+    right: 27px;
+    top: 26px;
+    svg {
+      fill: $blue;
+    }
+  }
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media all and (max-width: $breakpoint-width-phone){
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+
+    .close-icon{
+      position: absolute;
+      right: 35px;
+      top: 32px;
+    }
+  }
+}
