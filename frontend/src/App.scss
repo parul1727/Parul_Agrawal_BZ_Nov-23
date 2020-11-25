@@ -1,8 +1,9 @@
 @import './scss/variables';
+@import './Components/default';
 
 .app {
   * {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-style: normal;
     color: $grey99;
   }
@@ -11,6 +12,20 @@
     height: 1.3rem;
     width: 1.3rem;
     cursor: pointer;
+  }
+  .icon.umbrella {
+    height: 64px;
+    width: 60px;
+    * {
+      fill: $blue;
+    }
+    &.small {
+      height: 27px;
+      width: 30px;
+    }
+  }
+  .page-link {
+    margin-left: 10px;
   }
 
   .background-overlay {
@@ -26,8 +41,16 @@
   .start-container {
     display: flex;
     justify-content: center;
-    .modal {
-      padding: 78px 90px 58px 90px;
+    .modal-header {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      a {
+        font-size: 14px;
+        line-height: 20px;
+        color: $blue;
+      }
     }
     .modal-body {
       flex-direction: column;
@@ -63,6 +86,12 @@
             justify-content: center;
             align-items: center;
           }
+          .large {
+            font-size: 32px;
+          }
+          .bold {
+            font-weight: bold;
+          }
         }
       }
 
@@ -72,6 +101,64 @@
         margin: 47px 0 27px 0;
         text-align: center;
       }
+
+      .page-header {
+          .list-item {
+            text-align: left;
+          }
+        &.footer{
+          opacity: 0.3;
+        }
+      }
+
+      .divider {
+        opacity: 0.1;
+        height: 1px;
+        background: #333;
+        width: 100%;
+      }
+
+      .page-footer{
+        background: $blue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+        * {
+          color: $white;
+        }
+        button{
+          background: transparent;
+          border: 0;
+          outline: 0;
+          box-shadow: none;
+        }
+        .left {
+          font-weight: bold;
+        }
+        .right {
+          display: flex;
+          .icon {
+            height: 28px;
+            width: 28px;
+            background: $white;
+            border-radius: 2px;
+            margin: 0 4px;
+            &.up {
+              transform: scaleY(-1);
+              background: $blue10;
+            }
+
+            svg * {
+              fill: $grey99;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -79,8 +166,10 @@
 @media all and (max-width: $breakpoint-width-phone) {
   .app {
     .start-container {
-      .modal {
-        padding: 126px 32px 60px 32px;
+      .page-header {
+        .list-item .large {
+          font-size: 24px !important;
+        }
       }
     }
   }
@@ -109,11 +198,11 @@ button {
   height: auto;
   width: 690px;
   position: fixed;
-  top: 109px;
+  top: 30px;
   left: calc(50% - 345px);
   z-index: 99;
   background: $bg;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   &.show {
     display: block;

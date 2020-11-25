@@ -1,0 +1,124 @@
+@import '../scss/variables';
+
+/* Start Page style */
+
+.modal .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+  &.start {
+    .circle-blue {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media all and (max-width: $breakpoint-width-phone) {
+    &.start {
+      padding: 126px 32px 60px 32px;
+    }
+  }
+}
+
+/* Insurance Page style */
+
+.modal .page.insurance, .modal .page.business-name{
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 56px;
+
+  .page-content {
+      margin: 42px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .box {
+        width: 270px;
+        background: $white;
+        border: 0.863636px solid $grey20;
+        box-sizing: border-box;
+        box-shadow: 0 3.45455px 3.45455px rgba(0, 0, 0, 0.1);
+        border-radius: 3.45455px;
+        padding: 21px 18px;
+        margin: 12px 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon * {
+          fill: $blue;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          margin-left: 14px;
+          .top {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+          }
+          .bottom {
+            font-size: 10px;
+            line-height: 12px;
+          }
+        }
+      }
+  }
+
+  @media all and (max-width: $breakpoint-width-phone) {
+    padding: 36px 28px;
+    .page-content{
+      margin: 30px 0;
+      justify-content: center;
+      .box {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+/* Business Name style */
+
+.modal .page.business-name {
+  .page-content {
+    width: 100%;
+    justify-content: flex-start;
+    .business-name {
+      font-size: 20px;
+      line-height: 23px;
+      color: $blue;
+      width: 100%;
+      border: 0;
+      background: transparent;
+      border-bottom: 1px solid $grey99;
+      outline: 0;
+    }
+    button {
+      background: $blue10;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      color: $blue;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      padding: 15px 18px 14px 17px;
+      margin-top: 25px;
+    }
+  }
+  .page-header {
+    &.footer {
+      margin: 30px 0;
+    }
+  }
+
+  @media all and (min-width: $breakpoint-width-phone) {
+    .step-4 {
+      display: none;
+    }
+  }
+}
