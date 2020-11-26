@@ -3,7 +3,7 @@
 
 .app {
   * {
-    font-family: 'Roboto';
+    font-family: sans-serif;
     font-style: normal;
     color: $grey99;
   }
@@ -26,6 +26,13 @@
   }
   .page-link {
     margin-left: 10px;
+  }
+
+  .error {
+    color: $red;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-top: 4px;
   }
 
   .background-overlay {
@@ -116,6 +123,7 @@
         height: 1px;
         background: #333;
         width: 100%;
+        margin: 40px 0;
       }
 
       .page-footer{
@@ -196,6 +204,7 @@ button {
 .modal {
   box-sizing: border-box;
   height: auto;
+  min-height: 705px;
   width: 690px;
   position: fixed;
   top: 30px;

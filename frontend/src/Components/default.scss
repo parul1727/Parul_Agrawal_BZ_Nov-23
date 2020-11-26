@@ -9,7 +9,6 @@
   width: 100%;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 2rem 4rem;
   &.start {
     .circle-blue {
       display: flex;
@@ -19,7 +18,7 @@
   }
   @media all and (max-width: $breakpoint-width-phone) {
     &.start {
-      padding: 126px 32px 60px 32px;
+      padding: 60px 32px;
     }
   }
 }
@@ -29,10 +28,10 @@
 .modal .page.insurance, .modal .page.business-name{
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 56px;
+  padding: 32px 64px;
 
   .page-content {
-      margin: 42px 0;
+      margin: 70px 0 83px 0;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -71,9 +70,28 @@
   }
 
   @media all and (max-width: $breakpoint-width-phone) {
-    padding: 36px 28px;
     .page-content{
+      justify-content: center;
       margin: 30px 0;
+      .box {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+.modal .page.insurance {
+  .divider {
+    background: transparent !important;
+  }
+  .page-content {
+    margin: 60px 0 50px 0;
+  }
+  @media all and (max-width: $breakpoint-width-phone) {
+    padding: 1rem 2rem 0 2rem;
+    margin: 0;
+    .page-content{
+      margin: 16px 0;
       justify-content: center;
       .box {
         margin: 10px 0;
@@ -88,6 +106,7 @@
   .page-content {
     width: 100%;
     justify-content: flex-start;
+    flex-direction: column;
     .business-name {
       font-size: 20px;
       line-height: 23px;
@@ -97,6 +116,7 @@
       background: transparent;
       border-bottom: 1px solid $grey99;
       outline: 0;
+      padding-bottom: 7px;
     }
     button {
       background: $blue10;
@@ -108,12 +128,12 @@
       line-height: 21px;
       padding: 15px 18px 14px 17px;
       margin-top: 25px;
+      width: fit-content;
     }
   }
-  .page-header {
-    &.footer {
-      margin: 30px 0;
-    }
+
+  @media all and (max-width: $breakpoint-width-phone) {
+    padding: 32px;
   }
 
   @media all and (min-width: $breakpoint-width-phone) {
